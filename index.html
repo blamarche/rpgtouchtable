@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+<head>
+<title>RPG TouchTable (alpha, GPLv3)</title>
+<style>
+html,body {
+  background: #000;
+  color: #ccc;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  user-select: none; 
+}
+button {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+  outline: none !important;
+}
+.main {
+  float: left;
+  width: 84%;
+  height: 100%;
+  overflow: auto;
+  position: absolute;
+  left: 16%;
+  top: 0;
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+.main img {
+  position: absolute;
+  z-index: 10;
+}
+.main img.file {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+.sidebar {
+  position: absolute;
+  left:0;
+  z-index: 99999;
+  height: 100%;
+  width: 16%;
+  border-right: none;/*1px solid #888;*/
+  overflow-y: scroll;
+  text-align: center;
+  background: #222;
+}
+.sidebar.trash {
+  outline: 3px solid red;
+  /*border-right: 1px solid red;*/
+}
+.sidebar img {
+  width: 48px;
+  height: auto;
+  margin: 4px;
+  padding: 4px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  background: #333;
+}
+.sidebar .buttons {
+  width: 100%;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  background-color: #666;
+  margin-bottom: 6px;
+}
+.sidebar .buttons button {
+  background: #444;
+  color: #ccc;
+  width: 29%;
+  border: 1px solid #999;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+  cursor:pointer;
+}
+.sidebar .buttons button:hover {
+  background: #555;
+  border: 1px solid #eee;
+}
+.titleWrap {
+  position:absolute;
+  bottom: 5px;
+  left: 16.001%;
+  z-index: 99998;
+}
+.title {
+  width: auto;
+  height: 16px;
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  background-color: rgba(0,150,200,0.8);
+  color:white;
+  text-transform:capitalize;
+  padding: 3px 26px 2px 20px;
+  overflow: hidden;
+  display: none;
+  border-top-right-radius: 20px;
+}
+h5 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+  font-size: 18px;
+  background: #444;
+  padding: 5px 0;
+  cursor: pointer;
+}
+.section {
+  background: #555;
+  padding-top: 4px;
+  margin-left: -3px;
+  margin-top: -5px;
+}
+#remove {
+  position: absolute;
+  top: 0;
+  left: 16%;
+  width: 32px;
+  height: 32px;
+  font-size: 47px;
+  display: none;
+  font-weight: bold;
+  background-color: #f00;
+  color: white;
+  margin-top: -20px;
+  padding-bottom: 20px;
+  z-index: 100000;
+}
+/*
+.touchscreen::-webkit-scrollbar {
+    display: none;
+}
+*/
+.getstarted {
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 200px;
+  z-index: 0;
+}
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(0,170,210,1); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0,170,210,0.4); 
+}
+</style>
+<script src="window.js"></script>
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <div class="buttons">      
+      <button id="btnNew" onclick="clickNew()">🗋</button>
+      <button id="btnSave" onclick="clickSave()">🖫</button>
+      <button id="btnLoad" onclick="clickLoad()">🗁</button>
+    </div>
+  </div>
+  <div class="main" id="main">
+    <div class="getstarted">Drag an image file of your map here to get started!</div>
+  </div>
+  <div class="titleWrap">
+    <div class="title" id="title">
+    </div>    
+  </div>
+  <div id="remove">
+    ⨯
+  </div>
+</body>
+</html>
