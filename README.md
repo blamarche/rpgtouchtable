@@ -4,7 +4,9 @@
 RPG Touch Table is an easy to use, touch-friendly interface to manage and move tokens around a 2d map. It is intended for use by a DM/GM in pen and paper RPGs such as DnD and Dungeon World. 
 
 ## Usage
-Run the program, then drag an image of your map (overworld or dungeon, or anything else) from your hard drive or a web browser into the main window. Drag tokens out of the left sidebar and onto the map. Use your scroll wheel or pinch to zoom to scale the tokens. Drag them to move them around. Some helpful tools like a 'fog of war' type token can be used to obscure parts of the map, check out the Shapes section.
+Run the program, then drag an image of your map (overworld or dungeon, or anything else) from your hard drive or a web browser into the main window. Drag tokens out of the left sidebar and onto the map. Use your scroll wheel or pinch to zoom to scale the tokens. Drag them to move them around. To remove a token, drag it to the top left corner of the map view.
+
+Some helpful tools like a 'fog of war' type token can be used to obscure parts of the map, check out the Shapes section.
 
 ![Screenshot](https://i.imgur.com/MFJgXec.jpg)
 
