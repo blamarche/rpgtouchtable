@@ -10,7 +10,7 @@
   "author": "github.com/rpgtouchtable",
   "license": "GPLv3",
   "devDependencies": {
-    "electron": "^8.0.3"
+    "electron": "^11.5.0"
   },
   "dependencies": {
     "electron-drag-drop": "^1.1.0"
